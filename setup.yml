@@ -1,0 +1,12 @@
+---
+- name: Configure_web_servers
+  hosts: webservers
+  become: true
+
+
+  roles:
+    - { role: base, tags: base }
+    - { role: nginx, tags: nginx }
+    - { role: app, tags: app }
+    - { role: ssh, tags: ssh }
+    - { role: netdata, tags: netdata }
